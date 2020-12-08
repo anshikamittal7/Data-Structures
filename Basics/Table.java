@@ -11,18 +11,9 @@ class GFG {
 	public static void table(int n1,int n2,int n3){
 	    int i=1;
 	    while(i<=10){
-	        System.out.println(n1 + "*" + i + "="+ n1*i);
-	        i++;
-	    }	   
-	         int j=1;
-	    while(j<=10){
-	        System.out.println(n2+"*"+j+"="+n2*j);
-	        j++;
-	    }
-	    int k=1;
-	    while(k<=10){
-	        System.out.println(n3+"*"+k+"="+n3*k);
-	        k++;
-	    }
+	        System.out.print(n1 + "*" + i + "="+ n1*i+" ");
+		System.out.print(n2 + "*" + i + "="+ n2*i+" ");
+		System.out.print(n3 + "*" + i + "="+ n3*i+" ");
 	}
+		System.out.println();
 }
