@@ -16,3 +16,23 @@ class GFG {
 	    System.out.println(pos);
 	}
 }
+/*package whatever //do not write package name here */
+
+import java.util.*;
+
+class GFG {
+	public static void main (String[] args) {
+		int arr[]=new int[5];
+		Scanner s=new Scanner(System.in);
+		int num=s.nextInt();
+		String ans="no";
+		for(int i=0;i<arr.length;i++){
+		    arr[i]=s.nextInt();
+		    if (arr[i]==num){
+		        ans="yes";
+		        
+		    }
+		}
+		System.out.println(ans);
+	}
+}
