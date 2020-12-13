@@ -40,3 +40,28 @@ class GFG {
 		}
 	}
 }
+
+/*package whatever //do not write package name here */
+
+import java.util.*;
+
+class GFG {
+	public static void main (String[] args) {
+	    int arr[]=new int[6];
+	    Scanner s=new Scanner(System.in);
+	    for (int i=0;i<arr.length;i++){
+	        arr[i]=s.nextInt();
+	        System.out.print(arr[i]+" ");
+	   }
+	   System.out.println();
+	   for (int j=0;j<arr.length-1;j=j+2){
+	       int temp=arr[j];
+	       arr[j]=arr[j+1];
+	       arr[j+1]=temp;
+	       //System.out.print(arr[j]+" "+arr[j+1]+" ");
+	   }
+		for (int k=0;k<arr.length;k++){
+	       System.out.print(arr[k]+" ");
+	   }
+	}
+}
