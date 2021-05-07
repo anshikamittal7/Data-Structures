@@ -11,9 +11,18 @@ class GFG {
 		        System.out.println("interger");
 		    }else{
 		        System.out.println("non integer");
-		    }
+		    }    
+	}
+}
+
+/*package whatever //do not write package name here */
+
+import java.util.*;
+
+class GFG {
+	public static void main (String[] args) {
+		    Scanner s=new Scanner(System.in);
 		    
-		    
-		    
+		    System.out.println(s.hasNextInt());
 	}
 }
