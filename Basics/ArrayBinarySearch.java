@@ -14,7 +14,7 @@ class GFG {
 		    arr[i]=s.nextInt();
 		}
 		while(start<=end){
-		    int mid=(end+1-start)/2;
+		    int mid=(end+start)/2;
 		    if (arr[mid]==num){
 		        System.out.println(mid);
 		        break;
