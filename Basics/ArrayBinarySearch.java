@@ -17,12 +17,13 @@ class GFG {
 		    int mid=(end+start)/2;
 		    if (arr[mid]==num){
 		        System.out.println(mid);
-		        break;
+		        return;
 		    }else if(arr[mid]<num){
 		        start=mid+1;
 		    }else{
 		        end=mid-1;
 		    }
 		}
+		System.out.println(-1);
 	}
 }
