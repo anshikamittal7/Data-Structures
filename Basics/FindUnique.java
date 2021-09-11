@@ -23,6 +23,7 @@ class GFG {
 		  //  }
 		  //  if(ans==true){
 		  //      System.out.println(arr[i]);
+	          //      break;
 		  //  }
 		}
 		System.out.println(ans);
