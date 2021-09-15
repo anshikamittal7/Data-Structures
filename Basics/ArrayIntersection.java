@@ -33,6 +33,46 @@ class GFG {
 	}
 }
 
+oooooooooooorrrrrrrrrrrrrrr
+
+import java.util.*;
+
+class GFG {
+    public static void sort(int arr[]){
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=i+1;j<arr.length;j++){
+                int temp=arr[i];
+                if(arr[i]>arr[j]){
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+    }
+    public static void intersection(int arr1[],int arr2[]){
+        int i=0;int j=0;
+        while(i<arr1.length && j<arr2.length){
+            if(arr1[i]>arr2[j]) j++;
+            else if(arr2[j]>arr1[i]) i++;
+            else {
+                System.out.print(arr1[i]+" ");
+                i++;j++;   
+            }
+        }
+    }
+	public static void main (String[] args) {
+		Scanner s=new Scanner(System.in);
+		int t=s.nextInt();
+		while(t--!=0){
+		    int arr1[]=new int[s.nextInt()];
+		    for(int i=0;i<arr1.length;i++) arr1[i]=s.nextInt();
+		    int arr2[]=new int[s.nextInt()];
+		    for(int i=0;i<arr2.length;i++) arr2[i]=s.nextInt();
+		    sort(arr1);sort(arr2);
+		    intersection(arr1,arr2);
+		}
+	}
+}
 
 
 // sample input:
