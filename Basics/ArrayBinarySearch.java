@@ -1,29 +1,29 @@
-/*package whatever //do not write package name here */
-
 import java.util.*;
 
 class GFG {
+    public static int binarysearch(int arr[],int num){
+        int start=0;
+        int end=arr.length-1;
+        while(start<=end){
+            int mid=(start+end)/2;
+            if(num>arr[mid]) start=mid+1;
+            else if(num<arr[mid]) end=mid-1;
+            else return mid;
+        }
+        return -1;
+    }
 	public static void main (String[] args) {
 		Scanner s=new Scanner(System.in);
-		int n=s.nextInt();
-		int arr[]=new int[n];
-		int num=s.nextInt();
-		int start=0;
-		int end=arr.length-1;
-		for (int i=0;i<arr.length;i++){
-		    arr[i]=s.nextInt();
+		int t=s.nextInt();
+		while(t--!=0){
+		    int arr[]=new int[s.nextInt()];
+    		for(int i=0;i<arr.length;i++){
+    		    arr[i]=s.nextInt();
+    		}
+    		int num=s.nextInt();
+    		System.out.print("number exist at the index: ");
+    		System.out.println(binarysearch(arr,num));
 		}
-		while(start<=end){
-		    int mid=(end+start)/2;
-		    if (arr[mid]==num){
-		        System.out.println(mid);
-		        return;
-		    }else if(arr[mid]<num){
-		        start=mid+1;
-		    }else{
-		        end=mid-1;
-		    }
-		}
-		System.out.println(-1);
+		
 	}
 }
