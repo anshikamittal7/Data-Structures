@@ -1,29 +1,31 @@
-/*package whatever //do not write package name here */
-
 import java.util.*;
-
 class GFG {
+    public static void bsort(int arr[]) {
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=0;j<arr.length-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp=arr[j+1];
+                    arr[j+1]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+    }		
 	public static void main (String[] args) {
-		//bubble sort
 		Scanner s=new Scanner(System.in);
-		int n=s.nextInt();
-		int array[]=new int[n];
-		for (int i=0;i<array.length;i++){
-		    array[i]=s.nextInt();
-		    System.out.print(array[i]+" ");
+	    int t=s.nextInt();
+		while(t--!=0){
+		    int n=s.nextInt();	    
+		    int arr[]=new int[n];
+    		for(int i=0;i<arr.length;i++){
+    		    arr[i]=s.nextInt();
+    		}
+    		bsort(arr);
+    		for(int i=0;i<arr.length;i++){
+    		    System.out.print(arr[i]+" ");
+    		}
+    		System.out.println();
 		}
-		System.out.println();
-		for (int j=0;j<array.length-1;j++){
-		    for (int k=0;k<array.length-1;k++){
-		        if (array[k]>array[k+1]){
-		            int temp=array[k];
-		            array[k]=array[k+1];
-		            array[k+1]=temp;
-		        }
-		    }
-		}
-		for(int l=0;l<array.length;l++){
-		    System.out.print(array[l]+" ");
-		}
+		
 	}
 }
