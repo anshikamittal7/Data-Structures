@@ -72,3 +72,14 @@ class GFG {
 		}
 	}
 }
+
+
+// input:
+// 3
+// 789
+// 60
+// 23
+// output:
+// ptw ptx pty ptz puw pux puy puz pvw pvx pvy pvz qtw qtx qty qtz quw qux quy quz qvw qvx qvy qvz rtw rtx rty rtz ruw rux ruy ruz rvw rvx rvy rvz stw stx sty stz suw sux suy suz svw svx svy svz 
+// m n o 
+// ad ae af bd be bf cd ce cf 
