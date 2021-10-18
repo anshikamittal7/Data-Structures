@@ -9,7 +9,8 @@ class CN{
     } 
     
     public void print(){
-        System.out.println(real+" + "+complex+"i");
+        if(this.complex>=0) System.out.println(real+" + "+complex+"i");
+        else System.out.println(real+" - "+ -complex+"i");
     }
     public static CN sum(CN n1, CN n2){
         CN n3=new CN(n1.real +n2.real, n1.complex+n2.complex);
