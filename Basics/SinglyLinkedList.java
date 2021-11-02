@@ -181,6 +181,25 @@ class gfg{
         System.out.print(n1.data+" ");
     }
     
+    //CHECK PALINDROME
+    public static boolean palindrome(node head){
+        node temp = head;
+        int l=length(head);
+        node t = head;
+        for(int j=0; j<l/2 ;j++){
+            node t2 = head;
+            for(int i=1; i<l-j; i++){
+                t2 = t2.next;
+            }
+            if(t.data != t2.data){
+                return false;
+            }
+            t = t.next;
+            
+        }
+        return true;   
+    }
+    
     //MAIN
     public static void main (String[] args) {
         
