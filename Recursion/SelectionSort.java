@@ -13,7 +13,6 @@ class GFG {
         while(k < arr.length){
             if(arr[k]<arr[min]){
                 min = k;
-                k++;
             }        
             k++;
         }
@@ -22,7 +21,7 @@ class GFG {
     }
     
 	public static void main (String[] args) {
-	    int arr[] = {3,0};
+	    int arr[] = {3};
 	    SelectionSort(arr,0);
 		System.out.println(Arrays.toString(arr));
 	}
