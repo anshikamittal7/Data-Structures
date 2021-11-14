@@ -1,24 +1,28 @@
 import java.util.*;
 
 class GFG {
-    public static void BubbleSort(int arr[], int i){
-        if(i == arr.length){
+    public static void swap(int arr[],int i,int j){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    public static void bubbleSort(int arr[],int r,int c){
+        if(r==0){
             return;
         }
-        for(int k=0; k<arr.length-i-1; k++){
-            if(arr[k]>arr[k+1]){
-                int temp = arr[k];
-                arr[k] = arr[k+1];
-                arr[k+1] = temp;
+        if(r>c){
+            if(arr[c+1]<arr[c]){
+                swap(arr,c,c+1);
             }
+            bubbleSort(arr,r,c+1);
+        }else{
+            bubbleSort(arr,r-1,0);
         }
-        BubbleSort(arr, i+1);
-        
-    }
-    
+    } 
 	public static void main (String[] args) {
-	    int arr[] = {3,8,1,2,0,9};
-	    BubbleSort(arr,0);
-		System.out.println(Arrays.toString(arr));
+	    int arr[]={3,5,1,2,1,8,9,5,4,2,4,5,1,4,2,89,32,11,5,22,0,-21,-90,54};
+	    System.out.println(Arrays.toString(arr));
+	    bubbleSort(arr,arr.length-1,0);
+	    System.out.println(Arrays.toString(arr));
 	}
 }
