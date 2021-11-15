@@ -1,28 +1,32 @@
 import java.util.*;
 
 class GFG {
-    public static void swap(int arr[], int i, int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    public static void swap(int arr[],int l,int m){
+        int temp = arr[l];
+        arr[l] = arr[m];
+        arr[m] = temp;
     }
-    public static void SelectionSort(int arr[], int i){
-        if(i == arr.length) return;
-        int k = i;
-        int min = i;
-        while(k < arr.length){
-            if(arr[k]<arr[min]){
-                min = k;
-            }        
-            k++;
+    public static void selection(int arr[], int i, int j,int max){
+        if(i==0){
+            return;
         }
-        swap(arr, i, min);
-        SelectionSort(arr, i+1);
+        if(i>j){
+            if(arr[max]<arr[j]){
+                max=j;
+                selection(arr,i,j+1,max);
+            }
+            else{
+                selection(arr,i,j+1,max);
+            }
+        }else{
+            swap(arr,max,i-1);
+            selection(arr,i-1,0,0);
+        }
     }
-    
 	public static void main (String[] args) {
-	    int arr[] = {3};
-	    SelectionSort(arr,0);
-		System.out.println(Arrays.toString(arr));
+	    int arr[]={3,5,1,2,1,8,9,5,4,2,4,5,1,4,2,89,32,11,5,22,0,-21,-90,54};
+	    System.out.println(Arrays.toString(arr));
+	    selection(arr,arr.length,0,0);
+	    System.out.println(Arrays.toString(arr));
 	}
 }
