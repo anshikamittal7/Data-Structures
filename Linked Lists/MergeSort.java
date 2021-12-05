@@ -1,14 +1,14 @@
 import java.util.*;
-class node{
+class Node{
     int data;
-    node next;
+    Node next;
     
-    public node(int data){
+    public Node(int data){
         this.data = data;
     }
 }
 class GFG {
-    public static int length(node n1){
+    public static int length(Node n1){
         int l=0;
         while(n1 != null){
             n1 = n1.next;
@@ -16,7 +16,7 @@ class GFG {
         }
         return l;
     }
-    public static void print(node n1){
+    public static void print(Node n1){
         while(n1 != null){
             System.out.print(n1.data + "-->");
             n1=n1.next;
@@ -24,17 +24,17 @@ class GFG {
         System.out.print("null");
         System.out.println();
     }
-    public static node input(){
+    public static Node input(){
         Scanner s = new Scanner(System.in);
-        node n1 = new node(s.nextInt());
+        Node n1 = new Node(s.nextInt());
         if(n1.data == -1){
             return null;
         }
-        node temp = n1;
+        Node temp = n1;
         while(s.hasNextInt()){
             int x = s.nextInt();
             if(x != -1){
-                node n2 = new node(x);
+                Node n2 = new Node(x);
                 n1.next = n2;
                 n1 = n1.next;
             }
@@ -45,20 +45,20 @@ class GFG {
         return temp;
     }
     
-    public static node mipll(node head){
+    public static Node mipll(Node head){
         if(head==null||head.next==null){
             return head;
         }
-        node temp = head;
+        Node temp = head;
         while(temp.next!=null&&temp.next.next!=null){
             temp=temp.next.next;
             head = head.next;
         }
         return head;
     }
-    public static node mergell(node list1,node list2){
-        node ans = new node(0);
-        node temp = ans;
+    public static Node mergell(Node list1,Node list2){
+        Node ans = new Node(0);
+        Node temp = ans;
         while(list1 != null && list2 != null){
             if(list1.data>list2.data){
                 ans.next = list2;
@@ -79,18 +79,18 @@ class GFG {
         }
         return temp.next;
     }
-    public static node mergeSortll(node head){
+    public static Node mergeSortll(Node head){
         if(head==null||head.next==null){
             return head;
         }
-        node mid = mipll(head);
-        node midtemp = mid.next;
+        Node mid = mipll(head);
+        Node midtemp = mid.next;
         mid.next = null;
         return mergell(mergeSortll(head),mergeSortll(midtemp));
     }
     
 	public static void main (String[] args) {
-        node head = input();
+        Node head = input();
         print(head);
         head = mergeSortll(head);
         print(head);
