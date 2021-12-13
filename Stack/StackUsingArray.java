@@ -34,6 +34,10 @@ class StackUsingArray{
         topIndex--;
     }
     public void top(){
+        if(topIndex==0){
+            System.out.println("stack empty exception");
+            return;
+        }
         System.out.println(arr[topIndex-1]);
     }
     public void print(){
@@ -43,12 +47,7 @@ class StackUsingArray{
         System.out.println();
     }
     public void isEmpty(){
-        if(topIndex==0){
-            System.out.println("true");
-        }
-        else{
-            System.out.println("false");
-        }
+        System.out.println(topIndex==0);
     }
 }
 
@@ -64,5 +63,6 @@ class GFG {
 	    stack.print();
 	    stack.isEmpty();
 	    stack.size();
+	    stack.top();
 	}
 }
