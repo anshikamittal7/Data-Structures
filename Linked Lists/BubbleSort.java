@@ -46,14 +46,15 @@ class GFG {
     }
     
     public static Node bubbleSort(Node head){
+        int l=length(head);
         Node dummy = new Node(-1);
         dummy.next = head;
         Node newhead = dummy;
-        for(int i=0;i<length(head);i++){
+        for(int i=0;i<l-1;i++){
             dummy = newhead;
             Node prev = newhead.next;
             Node after = newhead.next.next;
-            int temp = length(head)-i;   
+            int temp = l-i;   
             while(dummy!=null && temp-- !=0  && prev!=null && after!=null){
                 if(prev.data > after.data){
                     dummy.next = after;
@@ -67,7 +68,6 @@ class GFG {
         }
         return newhead.next;
     }
-    
     
 	public static void main (String[] args) {
         Node head = input();
