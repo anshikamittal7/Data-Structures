@@ -1,51 +1,49 @@
 import java.util.*;
 
 class StackUsingArray{
-    int arr[]=new int[1];
-    int arraylength = 0;
-
+    private int arr[];
+    private int topIndex;
+    public StackUsingArray(){
+        topIndex=0;
+        arr=new int[5];
+        
+    }
     public void push(int x){
-        if(arraylength<arr.length){
-            arr[arraylength]=x;
+        if(topIndex<arr.length){
+            arr[topIndex]=x;
         }
         else{
             int newarr[] = new int[2*arr.length];
-            int i=0;
-            for(i=0;i<arr.length;i++){
+            for(int i=0;i<arr.length;i++){
                 newarr[i]=arr[i];
             }
-            newarr[arraylength]=x;
+            newarr[topIndex]=x;
             this.arr = newarr;
         }
-        arraylength++;
+        topIndex++;
         
     }
     public void size(){
-        System.out.println(arraylength);
+        System.out.println(topIndex);
     }
     public void pop(){
-        if(arraylength==0){
+        if(topIndex==0){
             System.out.println("stack under flow");
             return;
         }
-        int newarr[]=new int[arraylength-1];
-        for(int i=0;i<newarr.length;i++){
-            newarr[i]=arr[i];
-        }
-        arraylength--;
-        this.arr=newarr;
+        topIndex--;
     }
     public void top(){
-        System.out.println(arr[arraylength-1]);
+        System.out.println(arr[topIndex-1]);
     }
     public void print(){
-        for(int i=0;i<arraylength;i++){
+        for(int i=0;i<topIndex;i++){
             System.out.print(arr[i]+" ");
         }
         System.out.println();
     }
     public void isEmpty(){
-        if(arraylength==0){
+        if(topIndex==0){
             System.out.println("true");
         }
         else{
@@ -62,7 +60,9 @@ class GFG {
 	    stack.push(30);
 	    stack.push(40);
 	    stack.pop();
+	    stack.push(90);
 	    stack.print();
 	    stack.isEmpty();
+	    stack.size();
 	}
 }
