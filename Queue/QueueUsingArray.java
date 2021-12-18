@@ -10,6 +10,11 @@ class QueueUsingArray{
         this.rear=0;
         this.front=0;
     }
+    public QueueUsingArray(){
+        this.arr=new int[5];
+        this.rear=0;
+        this.front=0;
+    }
     
     public void doubleCapacity(){
         int newarr[]=new int[arr.length*2];
